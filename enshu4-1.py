@@ -1,4 +1,9 @@
+memo = []
+
 def func(n):
+    #
+    if memo[n] != -1:
+        return memo[n]
     #ベースケース
     if n == 0:
         return 0
@@ -8,11 +13,12 @@ def func(n):
         return 1
 
     #再帰
-    result = func(n-1) + func(n-2) + func(n-3)
+    memo[n] = func(n-1) + func(n-2) + func(n-3)
     
-    return result
+    return memo[n]
 
     
 if __name__ == '__main__':
     n = int(input())
+    memo = [-1] * (n+1)
     print(func(n))
