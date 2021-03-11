@@ -1,8 +1,6 @@
 n = int(input())
-a = []
-for i in range(n):
-    ai = int(input())
-    a.append(ai)
+a = list(map(int, input().split()))
+
 count = 0
 flag = False
 
